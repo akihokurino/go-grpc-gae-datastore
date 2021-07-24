@@ -1,0 +1,24 @@
+syntax = "proto3";
+package api;
+option go_package = "./pb";
+
+import "common.proto";
+import "entity_entry.proto";
+import "entity_project.proto";
+
+service EntryService {
+    rpc GetAllByProject (entity.ProjectID) returns (entity.EntryList);
+    rpc GetCountByProjects (entity.ProjectIDList) returns (EntryCountByProjectList);
+    rpc GetCountByProject (entity.ProjectID) returns (common.Count);
+    rpc Create (entity.ProjectID) returns (common.Empty);
+    rpc Delete (entity.ProjectID) returns (common.Empty);
+}
+
+message EntryCountByProjectList {
+    repeated EntryCountByProject items = 1;
+}
+
+message EntryCountByProject {
+    string projectID = 1;
+    int64 count = 2;
+}

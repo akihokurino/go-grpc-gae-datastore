@@ -1,0 +1,104 @@
+indexes:
+
+- kind: AdminUser
+  properties:
+  - name: PhoneNumber
+  - name: CreatedAt
+    direction: desc
+
+- kind: Project
+  properties:
+  - name: Status
+  - name: CreatedAt
+    direction: desc
+
+- kind: Project
+  properties:
+  - name: CompanyID
+  - name: CreatedAt
+    direction: desc
+
+- kind: Project
+  properties:
+  - name: CompanyID
+  - name: Status
+  - name: CreatedAt
+    direction: desc
+
+- kind: Client
+  properties:
+  - name: CompanyID
+  - name: IsDeleted
+
+- kind: Client
+  properties:
+  - name: CompanyID
+  - name: IsDeleted
+  - name: Role
+
+- kind: Client
+  properties:
+  - name: IsDeleted
+  - name: CreatedAt
+    direction: desc
+
+- kind: Client
+  properties:
+  - name: CompanyID
+  - name: IsDeleted
+  - name: CreatedAt
+    direction: desc
+
+- kind: ApplyClient
+  properties:
+  - name: Status
+  - name: CreatedAt
+    direction: desc
+
+- kind: Customer
+  properties:
+  - name: Status
+  - name: CreatedAt
+    direction: desc
+
+- kind: Entry
+  properties:
+  - name: ProjectID
+  - name: CreatedAt
+    direction: desc
+
+- kind: Entry
+  properties:
+  - name: CustomerID
+  - name: CreatedAt
+    direction: desc
+
+- kind: Message
+  properties:
+  - name: RoomID
+  - name: CreatedAt
+    direction: desc
+
+- kind: MessageRoom
+  properties:
+  - name: CustomerID
+  - name: UpdatedAt
+    direction: desc
+
+- kind: MessageRoom
+  properties:
+  - name: CompanyID
+  - name: UpdatedAt
+    direction: desc
+
+- kind: MessageRoom
+  properties:
+  - name: ProjectID
+  - name: UpdatedAt
+    direction: desc
+
+- kind: Contract
+  properties:
+  - name: CompanyID
+  - name: CreatedAt
+    direction: desc

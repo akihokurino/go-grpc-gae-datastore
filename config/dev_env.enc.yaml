@@ -1,0 +1,28 @@
+env_variables:
+    PROJECT_ID_unencrypted: gae-go-sample-dev
+    RTDB_URL_unencrypted: https://gae-go-sample-dev.firebaseio.com/
+    FIREBASE_ADMIN_KEY_unencrypted: firebase-cred.json
+    ALGOLIA_APP_ID_unencrypted: 1234
+    ALGOLIA_API_KEY: ENC[AES256_GCM,data:rE1K9g==,iv:myI2VGZury7JLYuGVNn15/mGuq91NKiIG+5OBK8oKfo=,tag:4aCWlKnSF5tt+QBVWztPEg==,type:int]
+    GOVERNMENT_KEY: ENC[AES256_GCM,data:n3tSIw==,iv:79/4V4Bt1wd6+owD00CoQz8R9XErgWbTM1S2eB5JplU=,tag:0Jy1Ifi/IJ8i/pJxmf3efg==,type:int]
+    GOVERNMENT_ENDPOINT_unencrypted: https://opendata.resas-portal.go.jp
+    STORAGE_BUCKET_unencrypted: gae-go-sample-dev.appspot.com
+    MAINTENANCE_unencrypted: false
+    NO_MESSAGE_DURATION_THRESHOLD_unencrypted: 180
+    NO_ENTRY_DURATION_THRESHOLD_unencrypted: 180
+    ADMIN_EMAILS: ENC[AES256_GCM,data:8mbwZc9EWgz/H++cLJI=,iv:PtiyX5ZFsuaSZLhzU9OhVQwHjap1M/57UUK7fuEBdWc=,tag:WfStHp+888eiuPNVW/18IA==,type:str]
+    SERVICE_ACCOUNT_PEM: ENC[AES256_GCM,data:MPl4,iv:RB9i/nABU94AwFCFmWlHCmA+lQ240SJkCBE/Ey0/h28=,tag:AJ/vOsj/SwVMko03LSEdmQ==,type:str]
+sops:
+    kms: []
+    gcp_kms:
+        - resource_id: projects/gae-go-sample-dev/locations/asia-northeast1/keyRings/gae-go-sample/cryptoKeys/config
+          created_at: "2021-07-24T05:59:15Z"
+          enc: CiUAb1SCihfTZxhBwlzjo66VijSaZD8qbwIHT5UbFOeMA6aI/GPgEkkA8ZXMJi7o9B7RTWGpyKmyLuXreesC0OcPjGn5jt5edbMkiD8ehZAZuXpM3nX1W/iyQgnGJXCL0oBqZQt/0p8R8JtDDRr94wU/
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2021-07-24T05:59:15Z"
+    mac: ENC[AES256_GCM,data:jC9fcxlSgwgkfv48pQfF6ocgBqYSxeik0jrwc7lk53Rl801bBBvTcnV345Up2ty8V2zUUrFJK+gdtM2aX3I5HZ+gCBdBFDlUKlIPyUaFcrZ+ZRHa/aeHwOok02HpIDI+yzu6/61lblq6RbkxJk0SKtEu75jZOysk0wqHDLvD2HE=,iv:y5wrsOQYAoI/TXb81yp3bLuH2aNGs25bQgTXURwj1uE=,tag:3VTxK5YuxSpjkuKiWbu/8g==,type:str]
+    pgp: []
+    unencrypted_suffix: _unencrypted
+    version: 3.7.1

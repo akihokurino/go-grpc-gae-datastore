@@ -1,0 +1,30 @@
+syntax = "proto3";
+package entity;
+option go_package = "./pb";
+
+message MessageID {
+    string id = 1;
+}
+
+message MessageIDList {
+    repeated string ids = 1;
+}
+
+message Message {
+    string id = 1;
+    string roomID = 2;
+    string fromID = 3;
+    string toID = 4;
+    bool fromCompany = 5;
+    string text = 6;
+    string gsImageURL = 7;
+    string signedImageURL = 8;
+    string gsFileURL = 9;
+    string signedFileURL = 10;
+    string createdAt = 11;
+}
+
+message MessageList {
+    repeated Message items = 1;
+}
+

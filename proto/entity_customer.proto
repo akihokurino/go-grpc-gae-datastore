@@ -1,0 +1,43 @@
+syntax = "proto3";
+package entity;
+option go_package = "./pb";
+
+import "entity_user.proto";
+import "entity_search_highlight.proto";
+
+message CustomerID {
+    string id = 1;
+}
+
+message CustomerIDList {
+    repeated string ids = 1;
+}
+
+message Customer {
+    enum Status {
+        Status_Unknown = 0;
+        Status_Inspection = 1;
+        Status_Denied = 2;
+        Status_Active = 3;
+    }
+
+    string id = 1;
+    string name = 2;
+    string nameKana = 3;
+    string gsIconURL = 4;
+    string signedIconURL = 5;
+    string birthdate = 6;
+    entity.User.Gender gender = 7;
+    string phoneNumber = 8;
+    string email = 9;
+    string pr = 10;
+    string address = 11;
+    Status status = 12;
+    string resumeURL = 13;
+    string createdAt = 14;
+    repeated entity.SearchHighlight highlights = 15;
+}
+
+message CustomerList {
+    repeated Customer items = 1;
+}

@@ -1,0 +1,35 @@
+syntax = "proto3";
+package api;
+option go_package = "./pb";
+
+import "common.proto";
+import "entity_message_room.proto";
+
+service MessageRoomService {
+    rpc GetAllByCustomer (common.Pager) returns (entity.MessageRoomList);
+    rpc GetAllByClient (common.Pager) returns (entity.MessageRoomList);
+    rpc Get (GetMessageRoomRequest) returns (entity.MessageRoom);
+    rpc Read (ReadMessageRoomRequest) returns (common.Empty);
+    rpc Delete (DeleteMessageRoomRequest) returns (common.Empty);
+}
+
+message ReadMessageRoomRequest {
+    string projectID = 1;
+    string opponentID = 2;
+}
+
+message GetMessageRoomRequest {
+    string projectID = 1;
+    string opponentID = 2;
+}
+
+message CreateMessageRoomRequest {
+    string projectID = 1;
+    string opponentID = 2;
+}
+
+message DeleteMessageRoomRequest {
+    string projectID = 1;
+    string opponentID = 2;
+}
+

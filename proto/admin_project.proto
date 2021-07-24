@@ -1,0 +1,29 @@
+syntax = "proto3";
+package api;
+option go_package = "./pb";
+
+import "common.proto";
+import "entity_project.proto";
+import "entity_company.proto";
+
+service AdminProjectService {
+    rpc GetAll (common.Pager) returns (entity.ProjectList);
+    rpc GetAllByIDs (entity.ProjectIDList) returns (entity.ProjectList);
+    rpc GetAllByFilter (FilterProjectRequest) returns (entity.ProjectList);
+    rpc GetAllByCompany (entity.CompanyIDWithPager) returns (entity.ProjectList);
+    rpc Get (entity.ProjectID) returns (entity.Project);
+    rpc GetTotalCount (common.Empty) returns (common.Count);
+    rpc GetCountByFilter (FilterProjectCountRequest) returns (common.Count);
+    rpc GetCountByCompany (entity.CompanyID) returns (common.Count);
+}
+
+message FilterProjectRequest {
+    common.Pager pager = 1;
+    string q = 2;
+}
+
+message FilterProjectCountRequest {
+    string q = 1;
+}
+
+

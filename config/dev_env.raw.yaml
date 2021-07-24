@@ -1,0 +1,14 @@
+env_variables:
+    PROJECT_ID_unencrypted: gae-go-sample-dev
+    RTDB_URL_unencrypted: https://gae-go-sample-dev.firebaseio.com/
+    FIREBASE_ADMIN_KEY_unencrypted: firebase-cred.json
+    ALGOLIA_APP_ID_unencrypted: 1234
+    ALGOLIA_API_KEY: 1234
+    GOVERNMENT_KEY: 1234
+    GOVERNMENT_ENDPOINT_unencrypted: https://opendata.resas-portal.go.jp
+    STORAGE_BUCKET_unencrypted: gae-go-sample-dev.appspot.com
+    MAINTENANCE_unencrypted: false
+    NO_MESSAGE_DURATION_THRESHOLD_unencrypted: 180
+    NO_ENTRY_DURATION_THRESHOLD_unencrypted: 180
+    ADMIN_EMAILS: test@gmail.com
+    SERVICE_ACCOUNT_PEM: pem

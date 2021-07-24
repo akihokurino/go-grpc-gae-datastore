@@ -1,0 +1,12 @@
+cron:
+- description: support_project_no_entry
+  url: /batch/support_project_no_entry
+  schedule: every 1 hours
+  timezone: Asia/Tokyo
+  target: batch
+
+- description: support_project_no_message
+  url: /batch/support_project_no_message
+  schedule: every 1 hours
+  timezone: Asia/Tokyo
+  target: batch

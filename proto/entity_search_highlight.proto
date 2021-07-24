@@ -1,0 +1,10 @@
+syntax = "proto3";
+package entity;
+option go_package = "./pb";
+
+message SearchHighlight {
+    string key = 1;
+    string val = 2;
+    string matchWord = 3;
+    string link_id = 4;
+}

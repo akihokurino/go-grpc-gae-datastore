@@ -1,0 +1,31 @@
+syntax = "proto3";
+package entity;
+option go_package = "./pb";
+
+import "common.proto";
+
+message MessageRoomIDList {
+    repeated string ids = 1;
+}
+
+message MessageRoom {
+    string id = 1;
+    string projectID = 2;
+    string customerID = 3;
+    string companyID = 4;
+    bool customerUnRead = 5;
+    int64 customerUnReadCount = 6;
+    bool companyUnRead = 7;
+    int64 companyUnReadCount = 8;
+    string createdAt = 9;
+    string updatedAt = 10;
+}
+
+message MessageRoomList {
+    repeated MessageRoom items = 1;
+}
+
+message MessageRoomIDWithPager {
+    common.Pager pager = 1;
+    string id = 2;
+}

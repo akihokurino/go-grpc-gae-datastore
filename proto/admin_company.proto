@@ -1,0 +1,15 @@
+syntax = "proto3";
+package api;
+option go_package = "./pb";
+
+import "common.proto";
+import "entity_company.proto";
+
+service AdminCompanyService {
+    rpc GetAll (common.Pager) returns (entity.CompanyList);
+    rpc GetAllByIDs (entity.CompanyIDList) returns (entity.CompanyList);
+    rpc Get (entity.CompanyID) returns (entity.Company);
+    rpc GetTotalCount (common.Empty) returns (common.Count);
+    rpc Active (entity.CompanyID) returns (common.Empty);
+    rpc Ban (entity.CompanyID) returns (common.Empty);
+}

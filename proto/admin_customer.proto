@@ -1,0 +1,28 @@
+syntax = "proto3";
+package api;
+option go_package = "./pb";
+
+import "common.proto";
+import "entity_customer.proto";
+
+service AdminCustomerService {
+    rpc GetAll (common.Pager) returns (entity.CustomerList);
+    rpc GetAllByIDs (entity.CustomerIDList) returns (entity.CustomerList);
+    rpc GetAllByFilter (FilterCustomerRequest) returns (entity.CustomerList);
+    rpc Get (entity.CustomerID) returns (entity.Customer);
+    rpc GetTotalCount (common.Empty) returns (common.Count);
+    rpc GetCountByFilter (FilterCustomerCountRequest) returns (common.Count);
+    rpc Deny (entity.CustomerID) returns (common.Empty);
+    rpc Active (entity.CustomerID) returns (common.Empty);
+}
+
+message FilterCustomerRequest {
+    common.Pager pager = 1;
+    string query = 2;
+    entity.Customer.Status status = 3;
+}
+
+message FilterCustomerCountRequest {
+    string query = 1;
+    entity.Customer.Status status = 2;
+}

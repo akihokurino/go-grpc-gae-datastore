@@ -1,0 +1,26 @@
+syntax = "proto3";
+package api;
+option go_package = "./pb";
+
+import "common.proto";
+import "entity_user.proto";
+import "entity_customer.proto";
+import "entity_client.proto";
+
+service UserService {
+    rpc GetMe (common.Empty) returns (Me);
+}
+
+message Me {
+    message MessageState {
+        string roomID = 1;
+        bool isUnRead = 2;
+        int64 unReadCount = 3;
+    }
+
+    string email = 1;
+    entity.User.Role role = 2;
+    entity.Customer customer = 3;
+    entity.Client client = 4;
+    repeated MessageState messageStateList = 5;
+}

@@ -1,0 +1,39 @@
+syntax = "proto3";
+package api;
+option go_package = "./pb";
+
+import "common.proto";
+import "entity_client.proto";
+
+service ClientService {
+    rpc GetAll (common.Pager) returns (entity.ClientList);
+    rpc GetAllByIDs (entity.ClientIDList) returns (entity.ClientList);
+    rpc Get (entity.ClientID) returns (entity.Client);
+    rpc Create (CreateClientRequest) returns (entity.Client);
+    rpc Update (UpdateClientRequest) returns (entity.Client);
+    rpc UpdateRole (UpdateClientRoleRequest) returns (common.Empty);
+    rpc Delete (entity.ClientID) returns (common.Empty);
+}
+
+message CreateClientRequest {
+    string name = 1;
+    string nameKana = 2;
+    string phoneNumber = 4;
+    string position = 5;
+    string email = 6;
+    string password = 7;
+    entity.Client.Role role = 8;
+}
+
+message UpdateClientRequest {
+    string name = 1;
+    string nameKana = 2;
+    string iconURL = 3;
+    string phoneNumber = 4;
+    string position = 5;
+}
+
+message UpdateClientRoleRequest {
+    string clientID = 1;
+    entity.Client.Role role = 2;
+}

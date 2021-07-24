@@ -1,0 +1,16 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "messageRooms": {
+      "$messageRoomId": {
+        ".read": "root.child('messageRooms').child($messageRoomId).child('members').child(auth.uid).exists()",
+        ".write": "root.child('messageRooms').child($messageRoomId).child('members').child(auth.uid).exists()",
+        "members": {
+          ".read": true,
+          ".write": false
+        }
+      }
+    }
+  }
+}

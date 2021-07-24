@@ -1,0 +1,19 @@
+syntax = "proto3";
+package entity;
+option go_package = "./pb";
+
+message Entry {
+    string customerID = 1;
+    string projectID = 2;
+    string createdAt = 3;
+}
+
+message EntryID {
+    string customerID = 1;
+    string projectID = 2;
+}
+
+message EntryList {
+    repeated Entry items = 1;
+}
+

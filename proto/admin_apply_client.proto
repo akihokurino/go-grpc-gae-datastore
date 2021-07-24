@@ -1,0 +1,30 @@
+syntax = "proto3";
+package api;
+option go_package = "./pb";
+
+import "common.proto";
+import "entity_apply_client.proto";
+
+service AdminApplyClientService {
+    rpc GetAll (common.Pager) returns (entity.ApplyClientList);
+    rpc GetAllByFilter (FilterApplyClientRequest) returns (entity.ApplyClientList);
+    rpc Get (entity.ApplyClientID) returns (entity.ApplyClient);
+    rpc GetTotalCount (common.Empty) returns (common.Count);
+    rpc GetCountByFilter (FilterApplyClientCountRequest) returns (common.Count);
+    rpc Accept (AcceptApplyClientRequest) returns (common.Empty);
+    rpc Deny (entity.ApplyClientID) returns (common.Empty);
+}
+
+message FilterApplyClientRequest {
+    entity.ApplyClient.Status status = 1;
+    common.Pager pager = 2;
+}
+
+message FilterApplyClientCountRequest {
+    entity.ApplyClient.Status status = 1;
+}
+
+message AcceptApplyClientRequest {
+    string email = 1;
+    string password = 2;
+}

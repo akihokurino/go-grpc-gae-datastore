@@ -1,0 +1,24 @@
+{
+  "messageRooms": {
+    "{roomId}": {
+      "members": {
+        "{userId}": {
+          "userId": "",
+          "name": "",
+          "iconUrl": "",
+          "iconServingUrl": ""
+        }
+      },
+      "messages": {
+        "{autoKey}": {
+          "fromId": "",
+          "toId": "",
+          "text": "",
+          "imageUrl": "",
+          "fileUrl": "",
+          "createdAt": ""
+        }
+      }
+    }
+  }
+}

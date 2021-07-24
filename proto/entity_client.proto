@@ -1,0 +1,35 @@
+syntax = "proto3";
+package entity;
+option go_package = "./pb";
+
+message ClientID {
+    string id = 1;
+}
+
+message ClientIDList {
+    repeated string ids = 1;
+}
+
+message Client {
+    enum Role {
+        Role_Unknown = 0;
+        Role_Admin = 1;
+        Role_Member = 2;
+    }
+
+    string id = 1;
+    string companyID = 2;
+    string name = 3;
+    string nameKana = 4;
+    string gsIconURL = 5;
+    string signedIconURL = 6;
+    string phoneNumber = 7;
+    string position = 8;
+    string email = 9;
+    string createdAt = 10;
+    Role role = 11;
+}
+
+message ClientList {
+    repeated Client items = 1;
+}

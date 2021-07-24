@@ -1,0 +1,52 @@
+syntax = "proto3";
+package api;
+option go_package = "./pb";
+
+import "common.proto";
+import "entity_project.proto";
+import "entity_customer.proto";
+
+service ProjectService {
+    rpc GetAllByIDs (entity.ProjectIDList) returns (entity.ProjectList);
+    rpc GetAllByNewlyArrived (common.Pager) returns (entity.ProjectList);
+    rpc GetAllByRecommend (common.Empty) returns (entity.ProjectList);
+    rpc GetAllBySearch (SearchProjectRequest) returns (entity.ProjectList);
+    rpc GetAllByClient (common.Pager) returns (entity.ProjectList);
+    rpc GetAllByClientExcludeAlreadyEntry (entity.CustomerID) returns (entity.ProjectList);
+    rpc GetAllByEntry (common.Pager) returns (entity.ProjectList);
+    rpc GetAllByEntryNumOrder (common.Pager) returns (entity.ProjectList);
+    rpc Get (entity.ProjectID) returns (entity.Project);
+    rpc GetCountByNewlyArrived (common.Empty) returns (common.Count);
+    rpc GetCountBySearch (SearchProjectCountRequest) returns (common.Count);
+    rpc GetCountByClient (common.Empty) returns (common.Count);
+    rpc GetCountByEntry (common.Empty) returns (common.Count);
+    rpc Create (CreateProjectRequest) returns (entity.Project);
+    rpc Update (UpdateProjectRequest) returns (entity.Project);
+    rpc Draft (entity.ProjectID) returns (common.Empty);
+    rpc Open (entity.ProjectID) returns (common.Empty);
+    rpc Close (entity.ProjectID) returns (common.Empty);
+    rpc Delete (entity.ProjectID) returns (common.Empty);
+}
+
+message SearchProjectRequest {
+    common.Pager pager = 1;
+    string q = 2;
+}
+
+message SearchProjectCountRequest {
+    string q = 1;
+}
+
+message CreateProjectRequest {
+    string name = 1;
+    string description = 2;
+    string thumbnailURL = 5;
+}
+
+message UpdateProjectRequest {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+    string thumbnailURL = 4;
+}
+

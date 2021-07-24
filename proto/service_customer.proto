@@ -1,0 +1,52 @@
+syntax = "proto3";
+package api;
+option go_package = "./pb";
+
+import "common.proto";
+import "entity_customer.proto";
+import "entity_user.proto";
+
+service CustomerService {
+    rpc GetAll (common.Empty) returns (entity.CustomerList);
+    rpc GetAllByIDs (entity.CustomerIDList) returns (entity.CustomerList);
+    rpc GetAllBySearch (SearchCustomerRequest) returns (entity.CustomerList);
+    rpc Get (entity.CustomerID) returns (entity.Customer);
+    rpc GetCountBySearch (SearchCustomerCountRequest) returns (common.Count);
+    rpc Create (CreateCustomerRequest) returns (entity.Customer);
+    rpc Update (UpdateCustomerRequest) returns (entity.Customer);
+}
+
+message SearchCustomerRequest {
+    enum OrderBy {
+        OrderBy_CreatedAt_DESC = 0;
+        OrderBy_Bookmark_DESC = 1;
+    }
+
+    common.Pager pager = 1;
+    string query = 2;
+    OrderBy orderBy = 6;
+}
+
+message SearchCustomerCountRequest {
+    string query = 1;
+}
+
+message CreateCustomerRequest {
+    string name = 1;
+    string nameKana = 2;
+    entity.User.Gender gender = 3;
+    string phoneNumber = 4;
+    string birthdate = 5;
+}
+
+message UpdateCustomerRequest {
+    string name = 1;
+    string nameKana = 2;
+    string iconURL = 3;
+    string birthdate = 4;
+    entity.User.Gender gender = 5;
+    string phoneNumber = 6;
+    string pr = 7;
+    string address = 8;
+    string resumeURL = 14;
+}

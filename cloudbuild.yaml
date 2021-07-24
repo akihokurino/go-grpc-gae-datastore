@@ -1,0 +1,55 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - build
+      - -f
+      - Dockerfile
+      - --target=cloud-build-base
+      - --tag=gcr.io/$PROJECT_ID/server:$BUILD_ID
+      - .
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - push
+      - gcr.io/$PROJECT_ID/server:$BUILD_ID
+  - name: 'gcr.io/$PROJECT_ID/server:$BUILD_ID'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        echo $_GOOGLE_SERVICE_KEY | base64 -d > .gcp-service-account-key.json
+        gcloud auth activate-service-account --key-file .gcp-service-account-key.json
+        gcloud config set account cd@gae-go-sample-$_ENV.iam.gserviceaccount.com
+        rm .gcp-service-account-key.json
+        make gen && make deploy ENV=$_ENV SERVICE=config VERSION=$BUILD_ID
+  - name: 'gcr.io/$PROJECT_ID/server:$BUILD_ID'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        echo $_GOOGLE_SERVICE_KEY | base64 -d > .gcp-service-account-key.json
+        gcloud auth activate-service-account --key-file .gcp-service-account-key.json
+        gcloud config set account cd@gae-go-sample-$_ENV.iam.gserviceaccount.com
+        rm .gcp-service-account-key.json
+        make gen && make deploy ENV=$_ENV SERVICE=default VERSION=$BUILD_ID
+  - name: 'gcr.io/$PROJECT_ID/server:$BUILD_ID'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        echo $_GOOGLE_SERVICE_KEY | base64 -d > .gcp-service-account-key.json
+        gcloud auth activate-service-account --key-file .gcp-service-account-key.json
+        gcloud config set account cd@gae-go-sample-$_ENV.iam.gserviceaccount.com
+        rm .gcp-service-account-key.json
+        make gen && make deploy ENV=$_ENV SERVICE=batch VERSION=$BUILD_ID
+  - name: 'gcr.io/$PROJECT_ID/server:$BUILD_ID'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        echo $_GOOGLE_SERVICE_KEY | base64 -d > .gcp-service-account-key.json
+        gcloud auth activate-service-account --key-file .gcp-service-account-key.json
+        gcloud config set account cd@gae-go-sample-$_ENV.iam.gserviceaccount.com
+        rm .gcp-service-account-key.json
+        make gen && make deploy ENV=$_ENV SERVICE=subscriber VERSION=$BUILD_ID
+
+timeout: 3600s

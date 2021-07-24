@@ -1,0 +1,10 @@
+syntax = "proto3";
+package api;
+option go_package = "./pb";
+
+import "common.proto";
+import "entity_prefecture.proto";
+
+service PrefectureService {
+    rpc GetAll (common.Empty) returns (entity.PrefectureList);
+}

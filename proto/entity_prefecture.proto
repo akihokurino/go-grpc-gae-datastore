@@ -1,0 +1,12 @@
+syntax = "proto3";
+package entity;
+option go_package = "./pb";
+
+message Prefecture {
+    int32 code = 1;
+    string name = 3;
+}
+
+message PrefectureList {
+    repeated Prefecture items = 1;
+}

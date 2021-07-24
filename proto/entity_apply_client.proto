@@ -1,0 +1,31 @@
+syntax = "proto3";
+package entity;
+option go_package = "./pb";
+
+message ApplyClientID {
+    string email = 1;
+}
+
+message ApplyClient {
+
+    enum Status {
+        Status_Unknown = 0;
+        Status_Inspection = 1;
+        Status_Denied = 2;
+        Status_Accepted = 3;
+    }
+
+    string email = 1;
+    string phoneNumber = 2;
+    string companyName = 3;
+    string webURL = 4;
+    string accountName = 5;
+    string accountNameKana = 6;
+    string position = 7;
+    Status status = 8;
+    string createdAt = 9;
+}
+
+message ApplyClientList {
+    repeated ApplyClient items = 1;
+}

@@ -1,0 +1,42 @@
+syntax = "proto3";
+package api;
+option go_package = "./pb";
+
+import "common.proto";
+import "entity_contract.proto";
+
+service ContractService {
+    rpc GetAllNewestByIDs(ContractIDWithoutCompanyIDList) returns (entity.ContractList);
+    rpc GetAllByClient (common.Pager) returns (entity.ContractList);
+    rpc Get (entity.ContractID) returns (entity.Contract);
+    rpc GetCountByClient (common.Empty) returns (common.Count);
+    rpc Create (CreateContractRequest) returns (entity.Contract);
+    rpc Update (UpdateContractRequest) returns (entity.Contract);
+    rpc Delete (DeleteContractRequest) returns (common.Empty);
+}
+
+message CreateContractRequest {
+    string projectID = 1;
+    string customerID = 2;
+    string fileURL = 3;
+}
+
+message UpdateContractRequest {
+    string projectID = 1;
+    string customerID = 2;
+    string fileURL = 3;
+}
+
+message DeleteContractRequest {
+    string projectID = 1;
+    string customerID = 2;
+}
+
+message ContractIDWithoutCompanyID {
+    string projectID = 1;
+    string customerID = 2;
+}
+
+message ContractIDWithoutCompanyIDList {
+    repeated ContractIDWithoutCompanyID ids = 1;
+}

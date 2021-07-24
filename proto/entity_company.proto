@@ -1,0 +1,46 @@
+syntax = "proto3";
+package entity;
+option go_package = "./pb";
+
+import "common.proto";
+
+message CompanyID {
+    string id = 1;
+}
+
+message CompanyIDList {
+    repeated string ids = 1;
+}
+
+message CompanyIDWithPager {
+    string id = 1;
+    common.Pager pager = 2;
+}
+
+message Company {
+    enum Status {
+        Status_Unknown = 0;
+        Status_Active = 1;
+        Status_BAN = 2;
+    }
+
+    string id = 1;
+    string name = 2;
+    string gsLogoURL = 3;
+    string signedLogoURL = 4;
+    string webURL = 5;
+    string establishedAt = 6;
+    string postalCode = 7;
+    string representativeName = 8;
+    string capitalStock = 9;
+    string introduction = 10;
+    string accordingCompanyName = 11;
+    string accordingCompanyPostalCode = 12;
+    string accordingCompanyAddress = 13;
+    Status status = 14;
+    string createdAt = 15;
+}
+
+message CompanyList {
+    repeated Company items = 1;
+}

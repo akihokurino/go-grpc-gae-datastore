@@ -1,0 +1,9 @@
+service: default
+runtime: go115
+
+main: ./entrypoint/default
+
+handlers:
+- url: /.*
+  script: auto
+  secure: always

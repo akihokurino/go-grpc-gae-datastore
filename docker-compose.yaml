@@ -1,0 +1,59 @@
+version: '3.5'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: local-dev
+    image: gae-go-sample-app-local:latest
+    ports:
+      - '3000:8080'
+    volumes:
+      - .:/app
+      - .mod:/go/pkg/mod
+    working_dir: /app
+    command:
+      - "sh"
+      - "-c"
+      - "make vendor && make gen && go run /app/entrypoint/default/main.go"
+    environment:
+      - IS_LOCAL=true
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/gcp-cred.json
+  batch:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: local-dev
+    image: gae-go-sample-batch-local:latest
+    ports:
+      - '3001:8080'
+    volumes:
+      - .:/app
+      - .mod:/go/pkg/mod
+    working_dir: /app
+    command:
+      - "sh"
+      - "-c"
+      - "make gen && go run /app/entrypoint/batch/main.go"
+    environment:
+      - IS_LOCAL=true
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/gcp-cred.json
+  subscriber:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: local-dev
+    image: gae-go-sample-subscriber-local:latest
+    ports:
+      - '3002:8080'
+    volumes:
+      - .:/app
+      - .mod:/go/pkg/mod
+    working_dir: /app
+    command:
+      - "sh"
+      - "-c"
+      - "make gen && go run /app/entrypoint/subscriber/main.go"
+    environment:
+      - IS_LOCAL=true
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/gcp-cred.json

@@ -1,0 +1,10 @@
+service: subscriber
+runtime: go115
+
+main: ./entrypoint/subscriber
+
+handlers:
+- url: /_ah/push-handlers/.*
+  script: auto
+  secure: always
+  login: admin

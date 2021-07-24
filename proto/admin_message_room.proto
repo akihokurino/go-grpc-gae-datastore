@@ -1,0 +1,18 @@
+syntax = "proto3";
+package api;
+option go_package = "./pb";
+
+import "entity_message_room.proto";
+
+service AdminMessageRoomService {
+    rpc GetAllByIDs (MessageRoomIDWithoutClientIDList) returns (entity.MessageRoomList);
+}
+
+message MessageRoomIDWithoutClientIDList {
+    repeated MessageRoomIDWithoutClientID ids = 1;
+}
+
+message MessageRoomIDWithoutClientID {
+    string projectID = 1;
+    string customerID = 2;
+}

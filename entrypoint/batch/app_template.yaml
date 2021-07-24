@@ -1,0 +1,9 @@
+service: batch
+runtime: go115
+
+main: ./entrypoint/batch
+
+handlers:
+- url: /.*
+  script: auto
+  secure: always

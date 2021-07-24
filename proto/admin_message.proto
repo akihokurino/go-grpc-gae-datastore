@@ -1,0 +1,11 @@
+syntax = "proto3";
+package api;
+option go_package = "./pb";
+
+import "entity_message.proto";
+import "entity_message_room.proto";
+
+service AdminMessageService {
+  rpc GetAllByRoom (entity.MessageRoomIDWithPager) returns (entity.MessageList);
+  rpc GetAllNewestByRooms (entity.MessageRoomIDList) returns (entity.MessageList);
+}

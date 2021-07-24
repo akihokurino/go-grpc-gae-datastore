@@ -1,0 +1,29 @@
+syntax = "proto3";
+package entity;
+option go_package = "./pb";
+
+message UserID {
+    string id = 1;
+}
+
+message User {
+    enum Role {
+        Role_Unknown = 0;
+        // 一般ユーザー
+        Role_Customer = 1;
+        // 企業側
+        Role_Client = 2;
+    }
+
+    enum Gender {
+        Gender_Unknown = 0;
+        // 男性
+        Gender_Male = 1;
+        // 女性
+        Gender_Female = 2;
+    }
+
+    string id = 1;
+    Role role = 2;
+    string email = 3;
+}

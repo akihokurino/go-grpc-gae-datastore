@@ -1,0 +1,43 @@
+syntax = "proto3";
+package api;
+option go_package = "./pb";
+
+import "entity_company.proto";
+
+service CompanyService {
+    rpc GetAllByIDs (entity.CompanyIDList) returns (entity.CompanyList);
+    rpc Get (entity.CompanyID) returns (entity.Company);
+    rpc Update (UpdateCompanyRequest) returns (entity.Company);
+}
+
+message CompanyIDWithProjectID {
+    string companyID = 1;
+    string projectID = 2;
+}
+
+message CompanyIDWithProjectIDList {
+    repeated CompanyIDWithProjectID items = 1;
+}
+
+message UpdateCompanyRequest {
+    string name = 1;
+    string logoURL = 2;
+    string webURL = 3;
+    string establishedAt = 4;
+    string postalCode = 5;
+    string representativeName = 6;
+    string capitalStock = 7;
+    string introduction = 8;
+    string accordingCompanyName = 9;
+    string accordingCompanyPostalCode = 10;
+    string accordingCompanyAddress = 11;
+}
+
+message CompanyWithProjectID {
+    entity.Company company = 1;
+    string projectID = 2;
+}
+
+message CompanyWithProjectIDList {
+    repeated CompanyWithProjectID items = 1;
+}

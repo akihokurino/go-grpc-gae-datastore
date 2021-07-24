@@ -1,0 +1,14 @@
+.idea
+.tmp
+
+/proto/go
+/functions/node_modules
+/di/wire_gen.go
+deploy_gae_*
+gcp-cred.json
+firebase-cred.json
+.mod
+
+/entrypoint/default/app.yaml
+/entrypoint/batch/app.yaml
+/entrypoint/subscriber/app.yaml

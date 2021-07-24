@@ -1,0 +1,26 @@
+syntax = "proto3";
+package api;
+option go_package = "./pb";
+
+import "common.proto";
+import "entity_message.proto";
+
+service MessageService {
+    rpc GetAllByRoom (GetAllMessageByRoomRequest) returns (entity.MessageList);
+    rpc GetAllNewestByRooms (MessageRoomPartialIDList) returns (entity.MessageList);
+}
+
+message GetAllMessageByRoomRequest {
+    common.Pager pager = 1;
+    string projectID = 2;
+    string opponentID = 3;
+}
+
+message MessageRoomPartialID {
+    string projectID = 1;
+    string opponentID = 2;
+}
+
+message MessageRoomPartialIDList {
+    repeated MessageRoomPartialID ids = 1;
+}

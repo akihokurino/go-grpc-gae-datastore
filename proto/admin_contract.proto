@@ -1,0 +1,14 @@
+syntax = "proto3";
+package api;
+option go_package = "./pb";
+
+import "common.proto";
+import "entity_contract.proto";
+
+service AdminContractService {
+    rpc GetAll (common.Pager) returns (entity.ContractList);
+    rpc Get (entity.ContractID) returns (entity.Contract);
+    rpc GetTotalCount (common.Empty) returns (common.Count);
+    rpc Accept (entity.ContractID) returns (common.Empty);
+    rpc Cancel (entity.ContractID) returns (common.Empty);
+}

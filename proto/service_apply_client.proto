@@ -1,0 +1,20 @@
+syntax = "proto3";
+package api;
+option go_package = "./pb";
+
+import "common.proto";
+
+service ApplyClientService {
+    rpc Register (RegisterClientRequest) returns (common.Empty);
+}
+
+message RegisterClientRequest {
+    string email = 1;
+    string phoneNumber = 2;
+    string companyName = 3;
+    string webURL = 4;
+    string accountName = 5;
+    string accountNameKana = 6;
+    string position = 7;
+}
+

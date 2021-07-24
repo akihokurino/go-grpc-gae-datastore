@@ -1,0 +1,15 @@
+/.idea
+/.tmp
+/config
+/functions
+/rtdb
+/scripts
+/.mod
+
+.gitignore
+firebase.json
+firebase-debug.log
+Makefile
+README.md
+firebase-cred.json
+gcp-cred.json

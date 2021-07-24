@@ -1,0 +1,31 @@
+syntax = "proto3";
+package entity;
+option go_package = "./pb";
+
+message ContractID {
+    string companyID = 1;
+    string projectID = 2;
+    string customerID = 3;
+}
+
+message Contract {
+    enum Status {
+        Status_Unknown = 0;
+        Status_InProgress = 1;
+        Status_Accepted = 2;
+        Status_Canceled = 3;
+    }
+
+    string companyID = 1;
+    string projectID = 2;
+    string customerID = 3;
+    string gsFileURL = 4;
+    string signedFileURL = 5;
+    Status status = 6;
+    string createdAt = 7;
+    string updatedAt = 8;
+}
+
+message ContractList {
+    repeated Contract items = 1;
+}

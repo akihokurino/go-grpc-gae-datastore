@@ -1,0 +1,43 @@
+syntax = "proto3";
+package entity;
+option go_package = "./pb";
+
+import "common.proto";
+import "entity_search_highlight.proto";
+
+message ProjectID {
+    string id = 1;
+}
+
+message ProjectIDList {
+    repeated string ids = 1;
+}
+
+message ProjectIDWithPager {
+    string id = 1;
+    common.Pager pager = 2;
+}
+
+message Project {
+    enum Status {
+        Status_Unknown = 0;
+        Status_Open = 1;
+        Status_Draft = 2;
+        Status_Close = 3;
+    }
+
+    string id = 1;
+    string companyID = 2;
+    string name = 3;
+    string description = 4;
+    string gsThumbnailURL = 7;
+    string signedThumbnailURL = 8;
+    Status status = 14;
+    string createdAt = 17;
+
+    repeated entity.SearchHighlight highlights = 18;
+}
+
+message ProjectList {
+    repeated Project items = 1;
+}

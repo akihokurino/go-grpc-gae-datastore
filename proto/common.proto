@@ -1,0 +1,16 @@
+syntax = "proto3";
+package common;
+option go_package = "./pb";
+
+message Empty {
+
+}
+
+message Count {
+    int64 count = 1;
+}
+
+message Pager {
+    int32 page = 1;
+    int32 offset = 2;
+}
