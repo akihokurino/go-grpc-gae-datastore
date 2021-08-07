@@ -5,7 +5,6 @@ export PATH := $(ROOT)/scripts:$(PATH)
 GOOGLE_SERVICE_KEY := ""
 SERVICE := default
 VERSION := 1
-ENV := dev
 
 vendor:
 	go mod tidy
@@ -23,29 +22,29 @@ build:
 	GOOS=linux GOARCH=amd64 go build -o .tmp/subscriber ./entrypoint/subscriber/
 
 encrypt:
-	gcloud config set project gae-go-sample-${ENV}
+	gcloud config set project akiho-playground
 	sops --encrypt \
-        --gcp-kms projects/gae-go-sample-${ENV}/locations/asia-northeast1/keyRings/gae-go-sample/cryptoKeys/config \
-        config/${ENV}_env.raw.yaml > config/${ENV}_env.enc.yaml
+        --gcp-kms projects/akiho-playground/locations/asia-northeast1/keyRings/keys/cryptoKeys/config \
+        config/env.raw.yaml > config/env.enc.yaml
 
 decrypt:
-	gcloud config set project gae-go-sample-${ENV}
-	sops --decrypt config/${ENV}_env.enc.yaml > config/${ENV}_env.raw.yaml
+	gcloud config set project akiho-playground
+	sops --decrypt config/env.enc.yaml > config/env.raw.yaml
 
 setup-config: decrypt
-	ENV=${ENV} setup_config.sh
+	setup_config.sh
 
 deploy: build setup-config
-	ENV=${ENV} SERVICE=${SERVICE} VERSION=${VERSION} deploy.sh
+	SERVICE=${SERVICE} VERSION=${VERSION} deploy.sh
 
 deploy-all: build setup-config
-	ENV=${ENV} VERSION=${VERSION} COMMAND=all deploy.sh
+	VERSION=${VERSION} COMMAND=all deploy.sh
 
 deploy-function:
-	ENV=${ENV} deploy_function.sh
+	deploy_function.sh
 
 backup:
-	ENV=${ENV} backup.sh
+	backup.sh
 
 run-local:
 	docker-compose up

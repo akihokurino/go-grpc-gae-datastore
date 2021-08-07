@@ -13,6 +13,7 @@ import (
 
 const (
 	authKey = "Authorization"
+	debugAuthKey = "X-User-Id"
 )
 
 func NewUserAuthenticate(
@@ -27,6 +28,10 @@ func NewUserAuthenticate(
 		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 			ctx := r.Context()
 			meID := domain.UserID("")
+
+			if uid := r.Header.Get(debugAuthKey); uid != "" {
+				meID = domain.UserID(uid)
+			}
 
 			if meID.String() == "" {
 				client, err := fireClient.AuthClient(ctx)
@@ -113,6 +118,12 @@ func NewAdminAuthenticate(
 	return func(base http.Handler) http.Handler {
 		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 			ctx := r.Context()
+
+			if uid := r.Header.Get(debugAuthKey); uid != "" {
+				newContext, _ := contextProvider.WithAuthAdminUID(ctx, domain.AdminUserID(uid))
+				base.ServeHTTP(w, r.WithContext(newContext))
+				return
+			}
 
 			client, err := fireClient.AuthClient(ctx)
 			if err != nil {
