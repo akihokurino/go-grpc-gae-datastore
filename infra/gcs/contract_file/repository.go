@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"strings"
 
-	"gae-go-sample/adapter"
-	"gae-go-sample/domain"
+	"gae-go-recruiting-server/adapter"
+	"gae-go-recruiting-server/domain"
 
 	"cloud.google.com/go/storage"
 	"github.com/pkg/errors"

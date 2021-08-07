@@ -3,7 +3,7 @@ package adapter
 import (
 	"context"
 
-	"gae-go-sample/domain"
+	"gae-go-recruiting-server/domain"
 
 	"firebase.google.com/go/auth"
 	"firebase.google.com/go/db"

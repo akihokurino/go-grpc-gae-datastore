@@ -4,7 +4,7 @@ import (
 	"net/url"
 	"time"
 
-	"gae-go-sample/domain"
+	"gae-go-recruiting-server/domain"
 )
 
 const kind = "Message"

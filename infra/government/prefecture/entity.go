@@ -1,6 +1,6 @@
 package prefecture
 
-import "gae-go-sample/domain"
+import "gae-go-recruiting-server/domain"
 
 type root struct {
 	Items []entity `json:"result"`

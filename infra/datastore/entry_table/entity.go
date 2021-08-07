@@ -3,7 +3,7 @@ package entry_table
 import (
 	"time"
 
-	"gae-go-sample/domain"
+	"gae-go-recruiting-server/domain"
 )
 
 const kind = "Entry"

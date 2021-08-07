@@ -4,8 +4,8 @@ import (
 	"context"
 	"encoding/json"
 
-	"gae-go-sample/adapter"
-	"gae-go-sample/domain"
+	"gae-go-recruiting-server/adapter"
+	"gae-go-recruiting-server/domain"
 
 	"github.com/pkg/errors"
 )

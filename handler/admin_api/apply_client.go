@@ -4,10 +4,10 @@ import (
 	"context"
 	"time"
 
-	"gae-go-sample/adapter"
-	"gae-go-sample/domain"
-	"gae-go-sample/handler"
-	pb "gae-go-sample/proto/go/pb"
+	"gae-go-recruiting-server/adapter"
+	"gae-go-recruiting-server/domain"
+	"gae-go-recruiting-server/handler"
+	pb "gae-go-recruiting-server/proto/go/pb"
 )
 
 type applyClientHandler struct {

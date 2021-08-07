@@ -3,7 +3,7 @@ package algolia
 import (
 	"context"
 
-	"gae-go-sample/adapter"
+	"gae-go-recruiting-server/adapter"
 
 	"github.com/algolia/algoliasearch-client-go/v3/algolia/compression"
 	"github.com/algolia/algoliasearch-client-go/v3/algolia/search"

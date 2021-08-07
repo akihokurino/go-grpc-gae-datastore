@@ -7,7 +7,7 @@ import (
 
 	"go.mercari.io/datastore/boom"
 
-	"gae-go-sample/adapter"
+	"gae-go-recruiting-server/adapter"
 )
 
 func NewTransaction(df adapter.DSFactory) adapter.Transaction {

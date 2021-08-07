@@ -4,7 +4,7 @@ import (
 	"net/url"
 	"time"
 
-	pb "gae-go-sample/proto/go/pb"
+	pb "gae-go-recruiting-server/proto/go/pb"
 )
 
 type Contract struct {

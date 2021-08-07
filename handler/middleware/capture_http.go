@@ -3,8 +3,8 @@ package middleware
 import (
 	"net/http"
 
-	"gae-go-sample/adapter"
-	"gae-go-sample/handler"
+	"gae-go-recruiting-server/adapter"
+	"gae-go-recruiting-server/handler"
 )
 
 func NewCaptureHTTP(contextProvider handler.ContextProvider) adapter.CaptureHTTP {

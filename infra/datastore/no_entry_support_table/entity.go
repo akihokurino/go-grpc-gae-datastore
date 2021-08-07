@@ -3,7 +3,7 @@ package no_entry_support_table
 import (
 	"time"
 
-	"gae-go-sample/domain"
+	"gae-go-recruiting-server/domain"
 )
 
 const kind = "NoEntrySupport"

@@ -4,12 +4,12 @@ import (
 	"context"
 	"net/http"
 
-	"gae-go-sample/adapter"
-	"gae-go-sample/handler"
+	"gae-go-recruiting-server/adapter"
+	"gae-go-recruiting-server/handler"
 
 	"github.com/twitchtv/twirp"
 
-	pb "gae-go-sample/proto/go/pb"
+	pb "gae-go-recruiting-server/proto/go/pb"
 )
 
 type Handler func(mux *http.ServeMux)

@@ -4,9 +4,9 @@ import (
 	"context"
 	"strconv"
 
-	"gae-go-sample/adapter"
+	"gae-go-recruiting-server/adapter"
 
-	"gae-go-sample/domain"
+	"gae-go-recruiting-server/domain"
 
 	"github.com/pkg/errors"
 	"github.com/twitchtv/twirp"

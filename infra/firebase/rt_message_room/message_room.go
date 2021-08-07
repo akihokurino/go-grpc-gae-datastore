@@ -1,7 +1,7 @@
 package rt_message_room
 
 import (
-	"gae-go-sample/domain"
+	"gae-go-recruiting-server/domain"
 )
 
 type messageRoom struct {

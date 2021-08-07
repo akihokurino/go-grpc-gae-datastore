@@ -4,8 +4,8 @@ import (
 	"net/url"
 	"time"
 
-	"gae-go-sample/domain"
-	pb "gae-go-sample/proto/go/pb"
+	"gae-go-recruiting-server/domain"
+	pb "gae-go-recruiting-server/proto/go/pb"
 )
 
 const kind = "Project"

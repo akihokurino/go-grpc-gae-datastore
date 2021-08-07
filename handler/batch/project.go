@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"time"
 
-	"gae-go-sample/adapter"
+	"gae-go-recruiting-server/adapter"
 )
 
 type ProjectService interface {

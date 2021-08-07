@@ -10,7 +10,7 @@ import (
 
 	"github.com/pkg/errors"
 
-	"gae-go-sample/adapter"
+	"gae-go-recruiting-server/adapter"
 
 	"cloud.google.com/go/storage"
 )

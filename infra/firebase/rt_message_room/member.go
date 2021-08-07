@@ -3,7 +3,7 @@ package rt_message_room
 import (
 	"net/url"
 
-	"gae-go-sample/domain"
+	"gae-go-recruiting-server/domain"
 )
 
 type member struct {

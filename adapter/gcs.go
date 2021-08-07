@@ -4,7 +4,7 @@ import (
 	"context"
 	"net/url"
 
-	"gae-go-sample/domain"
+	"gae-go-recruiting-server/domain"
 )
 
 type GCSSignature func(ctx context.Context, gsURL *url.URL) (*url.URL, error)

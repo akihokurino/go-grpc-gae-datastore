@@ -4,8 +4,8 @@ import (
 	"net/url"
 	"time"
 
-	pb "gae-go-sample/proto/go/pb"
-	"gae-go-sample/util/validator"
+	pb "gae-go-recruiting-server/proto/go/pb"
+	"gae-go-recruiting-server/util/validator"
 )
 
 type ApplyClient struct {

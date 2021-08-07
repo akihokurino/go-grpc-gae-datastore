@@ -5,9 +5,9 @@ import (
 	"regexp"
 	"time"
 
-	"gae-go-sample/util/validator"
+	"gae-go-recruiting-server/util/validator"
 
-	pb "gae-go-sample/proto/go/pb"
+	pb "gae-go-recruiting-server/proto/go/pb"
 )
 
 type Company struct {

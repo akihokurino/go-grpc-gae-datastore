@@ -7,7 +7,7 @@ import (
 
 	"github.com/pkg/errors"
 
-	"gae-go-sample/domain"
+	"gae-go-recruiting-server/domain"
 )
 
 type adminApplication struct {

@@ -5,8 +5,8 @@ import (
 
 	"github.com/algolia/algoliasearch-client-go/v3/algolia/search"
 
-	"gae-go-sample/domain"
-	pb "gae-go-sample/proto/go/pb"
+	"gae-go-recruiting-server/domain"
+	pb "gae-go-recruiting-server/proto/go/pb"
 )
 
 type AlgoliaClientFactory func(ctx context.Context) *search.Client

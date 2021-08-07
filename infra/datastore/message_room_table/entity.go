@@ -3,7 +3,7 @@ package message_room_table
 import (
 	"time"
 
-	"gae-go-sample/domain"
+	"gae-go-recruiting-server/domain"
 )
 
 const kind = "MessageRoom"

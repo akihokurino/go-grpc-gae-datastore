@@ -3,7 +3,7 @@ package client_app
 import (
 	"context"
 
-	"gae-go-sample/domain"
+	"gae-go-recruiting-server/domain"
 
 	"github.com/pkg/errors"
 )

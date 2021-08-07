@@ -4,7 +4,7 @@ import (
 	"context"
 	"net/url"
 
-	"gae-go-sample/adapter"
+	"gae-go-recruiting-server/adapter"
 
 	firebase "firebase.google.com/go"
 	"firebase.google.com/go/auth"

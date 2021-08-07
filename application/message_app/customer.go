@@ -4,7 +4,7 @@ import (
 	"context"
 	"sync"
 
-	"gae-go-sample/domain"
+	"gae-go-recruiting-server/domain"
 
 	"github.com/pkg/errors"
 	"golang.org/x/sync/errgroup"

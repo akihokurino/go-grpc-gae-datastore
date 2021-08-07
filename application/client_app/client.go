@@ -6,13 +6,13 @@ import (
 
 	"go.mercari.io/datastore/boom"
 
-	"gae-go-sample/adapter"
-	pb "gae-go-sample/proto/go/pb"
+	"gae-go-recruiting-server/adapter"
+	pb "gae-go-recruiting-server/proto/go/pb"
 
 	"github.com/pkg/errors"
 	"golang.org/x/sync/errgroup"
 
-	"gae-go-sample/domain"
+	"gae-go-recruiting-server/domain"
 )
 
 type clientApplication struct {

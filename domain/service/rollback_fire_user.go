@@ -3,8 +3,8 @@ package service
 import (
 	"context"
 
-	"gae-go-sample/adapter"
-	"gae-go-sample/domain"
+	"gae-go-recruiting-server/adapter"
+	"gae-go-recruiting-server/domain"
 )
 
 func NewRollbackFireUserService(

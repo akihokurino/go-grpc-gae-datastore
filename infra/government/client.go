@@ -7,7 +7,7 @@ import (
 	"net/url"
 	"path"
 
-	"gae-go-sample/adapter"
+	"gae-go-recruiting-server/adapter"
 
 	"github.com/pkg/errors"
 )

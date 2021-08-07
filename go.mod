@@ -1,4 +1,4 @@
-module gae-go-sample
+module gae-go-recruiting-server
 
 go 1.16
 

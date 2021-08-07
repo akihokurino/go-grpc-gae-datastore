@@ -3,11 +3,11 @@ package company_app
 import (
 	"context"
 
-	"gae-go-sample/adapter"
+	"gae-go-recruiting-server/adapter"
 
 	"github.com/pkg/errors"
 
-	"gae-go-sample/domain"
+	"gae-go-recruiting-server/domain"
 )
 
 type customerApplication struct {

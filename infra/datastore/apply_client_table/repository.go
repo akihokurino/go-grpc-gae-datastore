@@ -5,9 +5,9 @@ import (
 
 	"go.mercari.io/datastore/boom"
 
-	"gae-go-sample/adapter"
-	"gae-go-sample/domain"
-	pb "gae-go-sample/proto/go/pb"
+	"gae-go-recruiting-server/adapter"
+	"gae-go-recruiting-server/domain"
+	pb "gae-go-recruiting-server/proto/go/pb"
 
 	"github.com/pkg/errors"
 )

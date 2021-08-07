@@ -6,12 +6,12 @@ import (
 
 	"go.mercari.io/datastore/boom"
 
-	pb "gae-go-sample/proto/go/pb"
+	pb "gae-go-recruiting-server/proto/go/pb"
 
 	"github.com/pkg/errors"
 
-	"gae-go-sample/adapter"
-	"gae-go-sample/domain"
+	"gae-go-recruiting-server/adapter"
+	"gae-go-recruiting-server/domain"
 
 	"golang.org/x/sync/errgroup"
 )

@@ -18,7 +18,7 @@ steps:
       - |
         echo $_GOOGLE_SERVICE_KEY | base64 -d > .gcp-service-account-key.json
         gcloud auth activate-service-account --key-file .gcp-service-account-key.json
-        gcloud config set account cd@gae-go-sample-$_ENV.iam.gserviceaccount.com
+        gcloud config set account cd@gae-go-recruiting-server.iam.gserviceaccount.com
         rm .gcp-service-account-key.json
         make gen && make deploy ENV=$_ENV SERVICE=config VERSION=$BUILD_ID
   - name: 'gcr.io/$PROJECT_ID/server:$BUILD_ID'
@@ -28,7 +28,7 @@ steps:
       - |
         echo $_GOOGLE_SERVICE_KEY | base64 -d > .gcp-service-account-key.json
         gcloud auth activate-service-account --key-file .gcp-service-account-key.json
-        gcloud config set account cd@gae-go-sample-$_ENV.iam.gserviceaccount.com
+        gcloud config set account cd@gae-go-recruiting-server-$_ENV.iam.gserviceaccount.com
         rm .gcp-service-account-key.json
         make gen && make deploy ENV=$_ENV SERVICE=default VERSION=$BUILD_ID
   - name: 'gcr.io/$PROJECT_ID/server:$BUILD_ID'
@@ -38,7 +38,7 @@ steps:
       - |
         echo $_GOOGLE_SERVICE_KEY | base64 -d > .gcp-service-account-key.json
         gcloud auth activate-service-account --key-file .gcp-service-account-key.json
-        gcloud config set account cd@gae-go-sample-$_ENV.iam.gserviceaccount.com
+        gcloud config set account cd@gae-go-recruiting-server-$_ENV.iam.gserviceaccount.com
         rm .gcp-service-account-key.json
         make gen && make deploy ENV=$_ENV SERVICE=batch VERSION=$BUILD_ID
   - name: 'gcr.io/$PROJECT_ID/server:$BUILD_ID'
@@ -48,7 +48,7 @@ steps:
       - |
         echo $_GOOGLE_SERVICE_KEY | base64 -d > .gcp-service-account-key.json
         gcloud auth activate-service-account --key-file .gcp-service-account-key.json
-        gcloud config set account cd@gae-go-sample-$_ENV.iam.gserviceaccount.com
+        gcloud config set account cd@gae-go-recruiting-server-$_ENV.iam.gserviceaccount.com
         rm .gcp-service-account-key.json
         make gen && make deploy ENV=$_ENV SERVICE=subscriber VERSION=$BUILD_ID
 

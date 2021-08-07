@@ -4,9 +4,9 @@ import (
 	"net/url"
 	"time"
 
-	pb "gae-go-sample/proto/go/pb"
+	pb "gae-go-recruiting-server/proto/go/pb"
 
-	"gae-go-sample/domain"
+	"gae-go-recruiting-server/domain"
 )
 
 const kind = "Contract"

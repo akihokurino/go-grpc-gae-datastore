@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/url"
 
-	"gae-go-sample/adapter"
+	"gae-go-recruiting-server/adapter"
 
 	"cloud.google.com/go/storage"
 	"github.com/pkg/errors"

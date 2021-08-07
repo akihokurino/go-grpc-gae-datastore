@@ -7,7 +7,7 @@ import (
 
 	"github.com/pkg/errors"
 
-	"gae-go-sample/adapter"
+	"gae-go-recruiting-server/adapter"
 )
 
 func NewPublishResourceService(signature adapter.GCSSignature) adapter.PublishResourceService {

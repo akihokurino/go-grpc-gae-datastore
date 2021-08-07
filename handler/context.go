@@ -4,7 +4,7 @@ import (
 	"context"
 	"net/http"
 
-	"gae-go-sample/domain"
+	"gae-go-recruiting-server/domain"
 )
 
 const requestStoreKey = "__request_store_key__"

@@ -10,10 +10,10 @@ import (
 	"github.com/algolia/algoliasearch-client-go/v3/algolia/search"
 	"github.com/pkg/errors"
 
-	"gae-go-sample/adapter"
-	"gae-go-sample/domain"
-	"gae-go-sample/infra/algolia"
-	pb "gae-go-sample/proto/go/pb"
+	"gae-go-recruiting-server/adapter"
+	"gae-go-recruiting-server/domain"
+	"gae-go-recruiting-server/infra/algolia"
+	pb "gae-go-recruiting-server/proto/go/pb"
 
 	"github.com/algolia/algoliasearch-client-go/v3/algolia/opt"
 )

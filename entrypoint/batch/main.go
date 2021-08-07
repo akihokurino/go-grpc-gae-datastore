@@ -6,9 +6,9 @@ import (
 	"net/http"
 	"os"
 
-	"gae-go-sample/util/yaml"
+	"gae-go-recruiting-server/util/yaml"
 
-	"gae-go-sample/di"
+	"gae-go-recruiting-server/di"
 )
 
 func main() {

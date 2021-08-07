@@ -3,8 +3,8 @@ package batch
 import (
 	"net/http"
 
-	"gae-go-sample/adapter"
-	"gae-go-sample/handler"
+	"gae-go-recruiting-server/adapter"
+	"gae-go-recruiting-server/handler"
 )
 
 type Handler func(mux *http.ServeMux)

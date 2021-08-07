@@ -1,7 +1,7 @@
 package project_index
 
 import (
-	"gae-go-sample/domain"
+	"gae-go-recruiting-server/domain"
 )
 
 const indexName = "project"

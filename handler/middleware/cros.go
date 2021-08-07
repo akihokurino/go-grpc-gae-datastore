@@ -3,7 +3,7 @@ package middleware
 import (
 	"net/http"
 
-	"gae-go-sample/adapter"
+	"gae-go-recruiting-server/adapter"
 )
 
 func NewCROS() adapter.CROS {

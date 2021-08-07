@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
       target: local-dev
-    image: gae-go-sample-app-local:latest
+    image: gae-go-recruiting-server-app-local:latest
     ports:
       - '3000:8080'
     volumes:
@@ -24,7 +24,7 @@ services:
       context: .
       dockerfile: Dockerfile
       target: local-dev
-    image: gae-go-sample-batch-local:latest
+    image: gae-go-recruiting-server-batch-local:latest
     ports:
       - '3001:8080'
     volumes:
@@ -43,7 +43,7 @@ services:
       context: .
       dockerfile: Dockerfile
       target: local-dev
-    image: gae-go-sample-subscriber-local:latest
+    image: gae-go-recruiting-server-subscriber-local:latest
     ports:
       - '3002:8080'
     volumes:

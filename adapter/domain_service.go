@@ -7,7 +7,7 @@ import (
 
 	"go.mercari.io/datastore/boom"
 
-	"gae-go-sample/domain"
+	"gae-go-recruiting-server/domain"
 )
 
 type BindCustomerEmailService func(

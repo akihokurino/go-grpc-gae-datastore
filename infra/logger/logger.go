@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	"gae-go-sample/adapter"
+	"gae-go-recruiting-server/adapter"
 )
 
 func NewLoggerWithMinLevel(minLevel adapter.LogLevel) adapter.CompositeLogger {

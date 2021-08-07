@@ -1,7 +1,7 @@
 package fire_user
 
 import (
-	"gae-go-sample/domain"
+	"gae-go-recruiting-server/domain"
 
 	"firebase.google.com/go/auth"
 )
