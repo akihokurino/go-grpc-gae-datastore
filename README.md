@@ -1,4 +1,4 @@
-# gae-go-sample
+# gae-go-recruiting-server
 
 ## 構成
 - go 1.16
