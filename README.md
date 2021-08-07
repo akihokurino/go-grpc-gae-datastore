@@ -2,13 +2,15 @@
 
 ## 構成
 - go 1.16
+- app engine 2nd
 - twirp 8.0
 - wire
-- cloud datastore
 - firebase realtime database
 - firebase auth
 - algolia
-- app engine 2nd
 - sops
-- cloud kms
-- cloud build
+- cloud datastore
+- cloud kms（Cloud Key Management Service (KMS) API）
+- cloud build（Cloud Build API）
+- cloud scheduler（Cloud Scheduler API）
+- bigquery（BigQuery API）
