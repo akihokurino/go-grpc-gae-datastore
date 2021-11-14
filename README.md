@@ -1,16 +1,14 @@
-# gae-go-recruiting-server
-
-## 構成
+## Specs
 - go 1.16
 - app engine 2nd
-- twirp 8.0
-- wire
+- twirp 8.0（　https://github.com/twitchtv/twirp　）
+- wire（ https://github.com/google/wire ）
 - firebase realtime database
 - firebase auth
 - algolia
-- sops
+- sops（ https://github.com/mozilla/sops ）
 - cloud datastore
-- cloud kms（Cloud Key Management Service (KMS) API）
-- cloud build（Cloud Build API）
-- cloud scheduler（Cloud Scheduler API）
-- bigquery（BigQuery API）
+- cloud kms
+- cloud build
+- cloud scheduler
+- bigquery
