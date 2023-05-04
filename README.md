@@ -1,4 +1,4 @@
-## Specs
+## Used, Dependency
 - go 1.16
 - app engine 2nd
 - twirp 8.0（ https://github.com/twitchtv/twirp ）
